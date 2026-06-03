@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+<link rel="stylesheet" href="styles.css">
+    <title>Local Community Event Portal</title>
+<script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+</head>
+
+<body onload="loadPreference()">
+
+    <!-- Navigation -->
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#events">Events</a>
+        <a href="#contact">Contact</a>
+        <a href="help.html" target="_blank">Help</a>
+    </nav>
+
+    <!-- Main -->
+    <section id="home">
+        <h1>Local Community Event Portal</h1>
+    </section>
+
+    <!-- Welcome Banner -->
+    <div id="welcomeBanner">
+        Welcome User!
+        <span style="color:red;font-weight:bold;">
+            Special Offer: Free Entry Today!
+        </span>
+    </div>
+
+    <p class="highlight">Community Events Open Now</p>
+
+    <!-- Events -->
+    <section id="events">
+        <h2>Image Gallery</h2>
+
+        <div id="eventsContainer">
+<table border="1">
+            <tr>
+                <td>
+                    <img src="Music Event.jpg"
+                         class="event-img"
+                         alt="Event 1"
+                         title="Event 1"
+                         ondblclick="enlargeImage(this)">
+                    <br>Music Event
+                </td>
+
+                <td>
+                    <img src="Sports Event.jpg"
+                         class="event-img"
+                         alt="Event 2"
+                         title="Event 2"
+                         ondblclick="enlargeImage(this)">
+                    <br>Sports Event
+                </td>
+
+                <td>
+                    <img src="Workshop.jpg"
+                         class="event-img"
+                         alt="Event 3"
+                         title="Event 3"
+                         ondblclick="enlargeImage(this)">
+                    <br>Workshop
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <img src="Food Festival.jpg"
+                         class="event-img"
+                         alt="Event 4"
+                         title="Event 4">
+                    <br>Food Festival
+                </td>
+
+                <td>
+                    <img src="Art Show.jpg"
+                         class="event-img"
+                         alt="Event 5"
+                         title="Event 5">
+                    <br>Art Show
+                </td>
+
+                <td>
+                    <img src="Book Fair.jpg"
+                         class="event-img"
+                         alt="Event 6"
+                         title="Event 6">
+                    <br>Book Fair
+                </td>
+            </tr>
+        </table>
+</div>
+<h2>jQuery Demo</h2>
+<button id="hideEvents">Hide Events</button>
+<button id="showEvents">Show Events</button>
+
+        <h2>Event Registration Form</h2>
+
+<form onsubmit="handleFormSubmit(event)">
+
+            Name:
+            <input type="text"
+                    name="userName"
+                   placeholder="Enter Name"
+                   required
+                   autofocus>
+
+            Email:
+            <input type="email"
+                    name="userEmail"
+                   placeholder="Enter Email"
+                   required>
+
+            Phone:
+            <input type="text"
+                   id="phone"
+                   onblur="validatePhone()">
+
+            Date:
+            <input type="date" required>
+
+            Event Type:
+            <select id="eventType"
+            name="selectedEvent"
+                    onchange="showFee();savePreference()">
+                <option value="">Select Event</option>
+                <option value="Music">Music</option>
+                <option value="Sports">Sports</option>
+                <option value="Workshop">Workshop</option>
+            </select>
+
+            <p id="fee"></p>
+
+            Message:
+            <textarea rows="4"
+                      placeholder="Enter Message"></textarea>
+
+            Feedback:
+            <textarea id="feedback"
+                      onkeyup="countChars()"></textarea>
+
+            <p id="charCount">Characters : 0</p>
+            <div id="formErrors" style="color:red;"></div>
+
+            <button type="submit" id="registerBtn">
+    Submit
+</button>
+
+            <button type="button"
+                    onclick="clearPreferences()">
+                Clear Preferences
+            </button>
+
+            <br><br>
+
+            <output id="result"></output>
+
+        </form>
+
+        <h2>Promo Video</h2>
+
+        <video controls oncanplay="videoReady()">
+            <source src="Video.mp4" type="video/mp4">
+        </video>
+
+        <p id="videoMsg"></p>
+
+        <h2>Find Nearby Events</h2>
+
+        <button onclick="findLocation()">
+            Find Nearby Events
+        </button>
+
+        <p id="location"></p>
+
+    
+
+
+
+<!----Benefit of React/Vue: Component-based architecture makes applications easier to maintain and reuse.-->
+
+</section>
+
+    <!-- Contact -->
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>Email: community@events.com</p>
+    </section>
+
+    
+<div class="newsArticle">
+Community events are helping residents connect and participate in local activities.
+Music festivals, workshops, sports events, and cultural programs are organized regularly.
+These events encourage social interaction, skill development, and entertainment for people of all age groups.
+</div>
+
+
+    <!-- Footer -->
+    <footer>
+        <hr>
+        <p>&copy; 2026 Local Community Event Portal</p>
+    </footer>
+
+</body>
+</html>
