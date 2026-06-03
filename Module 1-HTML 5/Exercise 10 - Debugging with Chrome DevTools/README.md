@@ -6,5 +6,3 @@
 
 3) JavaScript Breakpoints in Sources tab - Added breakpoint at the line 95(let event = document.getElementById("eventType").value;). When user tried to change the event,
     Chrome showed "Paused in Debuger" message.
-
-**Screenshots attached as proof.**
