@@ -1,24 +1,37 @@
-import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Scanner;
 
-public class ArrayListExample {
+public class HashMapExample {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        ArrayList<String> students = new ArrayList<>();
+        HashMap<Integer, String> students = new HashMap<>();
 
-        System.out.print("How many names? ");
+        System.out.print("Enter number of students: ");
         int n = sc.nextInt();
-        sc.nextLine();
+        sc.nextLine(); 
 
-        for (int i = 0; i < n; i++) {
-            System.out.print("Enter name: ");
-            students.add(sc.nextLine());
+        
+        for (int i = 1; i <= n; i++) {
+            System.out.print("Enter Student ID: ");
+            int id = sc.nextInt();
+            sc.nextLine();
+
+            System.out.print("Enter Student Name: ");
+            String name = sc.nextLine();
+
+            students.put(id, name);
         }
 
-        System.out.println("Student Names:");
-        for (String name : students) {
-            System.out.println(name);
+        System.out.print("\nEnter Student ID to search: ");
+        int searchId = sc.nextInt();
+
+        if (students.containsKey(searchId)) {
+            System.out.println("Student Name: " + students.get(searchId));
+        } else {
+            System.out.println("Student ID not found.");
         }
+
+        sc.close();
     }
 }
